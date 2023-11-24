@@ -1,0 +1,30 @@
+.spinner {
+  width: 48px;
+  text-align: center;
+  display: inline-block;
+}
+
+.spinner > div {
+  height: 10px;
+  width: 10px;
+  background-color: gray;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.white {
+  background-color: white!important;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}

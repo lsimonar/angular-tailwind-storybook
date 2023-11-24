@@ -1,5 +1,22 @@
-<a class="btn" target="_blank" [href]="href">
-    <div>
+<button
+    class="button style-{{ style }} size-{{ size }} display-{{ display }}"
+    [class.destructive]="destructive"
+    [class.with-icon]="leadingIcon || trailingIcon"
+    [disabled]="disabled || loading"
+    (click)="onClick()">
+    <mini-loader *ngIf="loading"></mini-loader>
+    <icon
+        *ngIf="leadingIcon && !loading"
+        class="icon"
+        [icon]="leadingIcon!"
+        [width]="20"
+        [height]="20" />
+    <div *ngIf="!loading">
         <ng-content></ng-content>
     </div>
-</a>
+    <icon
+        *ngIf="trailingIcon && !loading"
+        class="icon"
+        [icon]="trailingIcon!"
+        [width]="20" />
+</button>

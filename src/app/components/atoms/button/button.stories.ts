@@ -3,7 +3,7 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 // Import Button
-import { ButtonComponent } from './button.component';
+import { ButtonComponent, ButtonStyle } from './button.component';
 
 // Define component
 export default {
@@ -29,22 +29,22 @@ export default {
 // Tailwind button template
 const TailwindButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: { ...args },
-    template: `<nwn-button [icon]="icon" [size]="size" [href]="href">Tailwind</nwn-button>`,
+    template: `<button-component [style]=style>Tailwind</button-component>`,
 });
 // Angular button template
 const AngularButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: { ...args },
-    template: `<nwn-button [icon]="icon" [size]="size" [href]="href">Angular</nwn-button>`,
+    template: `<button-component [style]=style>Angular</button-component>`,
 });
 // Storybook button template
 const StorybookButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: { ...args },
-    template: `<nwn-button [icon]="icon" [size]="size" [href]="href">Storybook</nwn-button>`,
+    template: `<button-component [style]=style>Storybook</button-component>`,
 });
 // Newwwton button template
 const NewwwtonButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: { ...args },
-    template: `<nwn-button [icon]="icon" [size]="size" [href]="href">Newwwton</nwn-button>`,
+    template: `<button-component [style]=style>Newwwton</button-component>`,
 });
 
 // Create an instances of the component
@@ -52,31 +52,23 @@ const NewwwtonButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) =
 export const TailwindButton = TailwindButtonTemplate.bind({});
 TailwindButton.storyName = 'Tailwind Button';
 TailwindButton.args = {
-    icon: 'tailwind',
-    size: 'lg',
-    href: 'https://tailwindcss.com',
+    style: ButtonStyle.PRIMARY
 };
 // Tailwind button
 export const AngularButton = AngularButtonTemplate.bind({});
 AngularButton.storyName = 'Angular Button';
 AngularButton.args = {
-    icon: 'angular',
-    size: 'lg',
-    href: 'https://angular.io/tutorial',
+    style: ButtonStyle.SECONDARY
 };
 // Storybook button
 export const StorybookButton = StorybookButtonTemplate.bind({});
 StorybookButton.storyName = 'Storybook Button';
 StorybookButton.args = {
-    icon: 'storybook',
-    size: 'lg',
-    href: 'https://storybook.js.org/docs/angular/',
+    style: ButtonStyle.OUTLINED
 };
 // Newwwton button
 export const NewwwtonButton = NewwwtonButtonTemplate.bind({});
 NewwwtonButton.storyName = 'Newwwton Button';
 NewwwtonButton.args = {
-    icon: 'newwwton',
-    size: 'lg',
-    href: 'https://newwwton.com',
+    style: ButtonStyle.TEXT
 };

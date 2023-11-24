@@ -1,0 +1,258 @@
+@import 'svg-colors.scss';
+
+.button {
+    @apply inline-flex justify-center items-center gap-x-2 shrink-0;
+    @apply text-sm text-center font-semibold;
+    @apply rounded-lg;
+
+    * {
+        @apply shrink-0;
+    }
+
+    .icon {
+        @include white-svg;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.display-hug {
+        @apply px-[24px];
+
+        &.with-icon {
+            @apply px-[12px];
+        }
+    }
+
+    &.display-fill {
+        @apply w-full;
+    }
+
+    &.size-small {
+        @apply h-[36px];
+    }
+
+    &.size-medium {
+        @apply h-[40px];
+    }
+
+    &.size-large {
+        @apply h-[44px];
+    }
+
+    &.style-primary {
+        @apply bg-primary-500;
+        @apply text-white;
+
+        &:hover {
+            @apply bg-primary-600;
+        }
+
+        &:focus-visible {
+            @apply shadow-button-focus shadow-primary-200;
+        }
+
+        &:active {
+            @apply bg-primary-800;
+        }
+
+        &.destructive {
+            @apply bg-error-500;
+
+            &:hover {
+                @apply bg-error-600;
+            }
+
+            &:focus-visible {
+                @apply shadow-button-focus shadow-error-200;
+            }
+
+            &:active {
+                @apply bg-error-700;
+            }
+
+            &:disabled {
+                @apply bg-error-200;
+                @apply text-white;
+            }
+        }
+    }
+
+    &.style-secondary {
+        @apply bg-primary-100;
+        @apply text-primary-500;
+
+        .icon {
+            @include primary-500-svg;
+        }
+
+        &:hover {
+            @apply bg-primary-200;
+        }
+
+        &:focus-visible {
+            @apply shadow-button-focus shadow-primary-300;
+        }
+
+        &:active {
+            @apply bg-primary-300;
+        }
+
+        &.destructive {
+            @apply bg-error-100;
+            @apply text-error-700;
+
+            &:hover {
+                @apply bg-error-200;
+            }
+
+            &:focus-visible {
+                @apply bg-error-100;
+                @apply shadow-button-focus shadow-error-200;
+            }
+
+            &:active {
+                @apply bg-error-300;
+            }
+
+            &:disabled {
+                @apply bg-error-50;
+                @apply text-error-300;
+            }
+        }
+    }
+
+    &.style-outlined {
+        @apply border border-solid border-primary-500;
+        @apply text-primary-500;
+
+        .icon {
+            @include primary-500-svg;
+        }
+
+        &:hover {
+            @apply bg-primary-100;
+        }
+
+        &:focus-visible {
+            @apply shadow-button-focus shadow-primary-300;
+        }
+
+        &:active {
+            @apply bg-primary-200;
+        }
+
+        &.destructive {
+            @apply border border-solid border-error-500;
+            @apply text-error-500;
+
+            .icon {
+                @include error-500-svg;
+            }
+
+            &:hover {
+                @apply bg-error-50;
+            }
+
+            &:focus-visible {
+                @apply shadow-button-focus shadow-error-200;
+            }
+
+            &:active {
+                @apply bg-error-200;
+            }
+
+            &:disabled {
+                @apply border border-solid border-error-300;
+                @apply text-error-300;
+                @apply bg-transparent;
+            }
+        }
+    }
+
+    &.style-text {
+        @apply text-primary-500;
+
+        .icon {
+            @include primary-500-svg;
+        }
+
+        &:hover {
+            @apply bg-primary-100;
+        }
+
+        &:focus-visible {
+            @apply shadow-button-focus shadow-primary-200;
+        }
+
+        &:active {
+            @apply bg-primary-200;
+        }
+
+        &:disabled {
+            @apply bg-transparent;
+        }
+
+        &.destructive {
+            @apply text-error-500;
+
+            &:hover {
+                @apply bg-error-50;
+            }
+
+            &:focus-visible {
+                @apply shadow-button-focus shadow-error-300;
+            }
+
+            &:active {
+                @apply bg-error-200;
+            }
+
+            &:disabled {
+                @apply text-neutral-500;
+                @apply bg-transparent;
+            }
+        }
+    }
+
+    &.style-dropdown {
+        @apply py-1.5 pl-2 pr-3;
+        @apply border border-solid border-neutral-400;
+        @apply h-full;
+        @apply font-medium;
+        @apply gap-3.5;
+
+        .icon {
+            @include neutral-600-svg;
+            @apply w-3;
+        }
+
+        .capital {
+            @apply capitalize;
+        }
+
+        &:hover {
+            @apply border-primary-600;
+        }
+
+        &:focus-visible {
+            @apply shadow-button-focus shadow-primary-200;
+        }
+
+        &:active {
+            @apply border-primary-800;
+        }
+    }
+
+    &:disabled {
+        @apply bg-neutral-200;
+        @apply text-neutral-500;
+        @apply border-none;
+        @apply pointer-events-none;
+
+        .icon {
+            @include neutral-500-svg;
+        }
+    }
+}
