@@ -1,74 +1,58 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Story, Meta, moduleMetadata } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryObj, argsToTemplate, componentWrapperDecorator } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 // Import Button
 import { ButtonComponent, ButtonStyle } from './button.component';
 
 // Define component
-export default {
-    title: 'Atoms/Button',
+
+const meta: Meta<ButtonComponent> = {
     component: ButtonComponent,
-    // Position the component to the center as otherwise we have set a global fullscreen layout to avoid default padding provided by SB6
+    title: 'Button component',
+    tags: ['autodocs'],
     parameters: {
-        layout: 'centered',
+        layout: 'centered'
     },
     decorators: [
-        moduleMetadata({
-            imports: [
-                CommonModule,
-            ],
-            declarations: [ButtonComponent],
-        }),
+      moduleMetadata({
+        //👇 Imports both components to allow component composition with Storybook
+        declarations: [ButtonComponent],
+        imports: [CommonModule],
+      }),
+      //👇 Wraps our stories with a decorator
+      componentWrapperDecorator(
+        (story) => `<div style="margin: 3em">${story}</div>`
+      ),
     ],
-    // Define control types
-    // You dont have to define any control types, as they are already handled by SB 6.3
-} as Meta;
+    render: (args: ButtonComponent) => ({
+      props: {
+        ...args,
+      },
+      template: `<button-component ${argsToTemplate(args)}>Button</button-component>`,
+    }),
+  };
+  export default meta;
 
-// Define template
-// Tailwind button template
-const TailwindButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
-    props: { ...args },
-    template: `<button-component [style]=style>Tailwind</button-component>`,
-});
-// Angular button template
-const AngularButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
-    props: { ...args },
-    template: `<button-component [style]=style>Angular</button-component>`,
-});
-// Storybook button template
-const StorybookButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
-    props: { ...args },
-    template: `<button-component [style]=style>Storybook</button-component>`,
-});
-// Newwwton button template
-const NewwwtonButtonTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
-    props: { ...args },
-    template: `<button-component [style]=style>Newwwton</button-component>`,
-});
+export const PrimaryButton: StoryObj<ButtonComponent> = {
+    args: {
+        style: ButtonStyle.PRIMARY
+    }
+};
 
-// Create an instances of the component
-// Tailwind button
-export const TailwindButton = TailwindButtonTemplate.bind({});
-TailwindButton.storyName = 'Tailwind Button';
-TailwindButton.args = {
-    style: ButtonStyle.PRIMARY
+export const SecondaryButton: StoryObj<ButtonComponent> = {
+    args: {
+        style: ButtonStyle.SECONDARY
+    }
 };
-// Tailwind button
-export const AngularButton = AngularButtonTemplate.bind({});
-AngularButton.storyName = 'Angular Button';
-AngularButton.args = {
-    style: ButtonStyle.SECONDARY
+export const OutlinedButton: StoryObj<ButtonComponent> = {
+    args: {
+        style: ButtonStyle.OUTLINED
+    }
 };
-// Storybook button
-export const StorybookButton = StorybookButtonTemplate.bind({});
-StorybookButton.storyName = 'Storybook Button';
-StorybookButton.args = {
-    style: ButtonStyle.OUTLINED
-};
-// Newwwton button
-export const NewwwtonButton = NewwwtonButtonTemplate.bind({});
-NewwwtonButton.storyName = 'Newwwton Button';
-NewwwtonButton.args = {
-    style: ButtonStyle.TEXT
+
+export const TextButton: StoryObj<ButtonComponent> = {
+    args: {
+        style: ButtonStyle.TEXT
+    }
 };
