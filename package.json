@@ -13,7 +13,7 @@
     "build-storybook": "ng run angular-tailwind-storybook:build-storybook",
     "static-storybook": "NODE_ENV=production npm run docs:json && storybook build -s src/assets/favicons/ -c .storybook -o .out"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^16.1.6",
     "@angular/common": "^16.1.6",
