@@ -3,7 +3,9 @@ import { Icons } from 'src/app/models/icons';
 import { ImagesService } from 'src/lib/services/images.service';
 
 @Component({
+    standalone: true,
     selector: 'icon',
+    providers: [ImagesService],
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
 })

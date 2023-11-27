@@ -27,7 +27,7 @@ const meta: Meta<ButtonComponent> = {
         props: {
             ...args,
         },
-        template: `<button-component ${argsToTemplate(args)}>Button</button-component>`,
+        template: `<wb-button-component ${argsToTemplate(args)}>Button</wb-button-component>`,
     }),
 };
 export default meta;

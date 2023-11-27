@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Icons } from 'src/app/models/icons';
+import { IconComponent } from '../icon/icon.component';
+import { MiniLoaderComponent } from '../mini-loader/mini-loader.component';
 
 export enum ButtonStyle {
     PRIMARY = 'primary',
@@ -25,8 +27,10 @@ export enum ButtonDisplay {
     HUG = 'hug',
 }
 @Component({
-    selector: 'button-component',
+    standalone: true,
+    selector: 'wb-button-component',
     templateUrl: './button.component.html',
+    imports: [IconComponent, MiniLoaderComponent],
     styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {

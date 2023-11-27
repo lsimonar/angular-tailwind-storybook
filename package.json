@@ -1,6 +1,6 @@
 {
   "name": "angular-tailwind-storybook",
-  "version": "0.0.0",
+  "version": "0.3.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,6 +13,9 @@
     "static-storybook": "NODE_ENV=production npm run docs:json && storybook build -s src/assets/favicons/ -c .storybook -o .out"
   },
   "private": false,
+  "dependencies": {    
+    "tslib": "^2.1.0"
+  },
   "peerDependencies": {
     "@angular/animations": "^16.1.6",
     "@angular/common": "^16.1.6",
@@ -25,9 +28,8 @@
     "@ngneat/svg-icon": "^3.2.0",
     "@ngneat/tailwind": "^7.0.3",
     "bluebird": "^3.7.2",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.1.0",
-    "zone.js": "~0.13.3"
+    "rxjs": "~7.8.1",
+    "zone.js": "~0.13.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.6",
