@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Icons } from 'src/app/models/icons';
-import { ImagesService } from 'src/app/services/images.service';
+import { ImagesService } from 'src/lib/services/images.service';
 
 @Component({
     selector: 'icon',

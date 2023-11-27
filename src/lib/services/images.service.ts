@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Icons } from '../models/icons';
+import { Icons } from '../../app/models/icons';
 
 type TIcons = Record<Icons, string>;
 

@@ -12,47 +12,45 @@ const meta: Meta<ButtonComponent> = {
     title: 'Button component',
     tags: ['autodocs'],
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     decorators: [
-      moduleMetadata({
-        //👇 Imports both components to allow component composition with Storybook
-        declarations: [ButtonComponent],
-        imports: [CommonModule],
-      }),
-      //👇 Wraps our stories with a decorator
-      componentWrapperDecorator(
-        (story) => `<div style="margin: 3em">${story}</div>`
-      ),
+        moduleMetadata({
+            //👇 Imports both components to allow component composition with Storybook
+            declarations: [ButtonComponent],
+            imports: [CommonModule],
+        }),
+        //👇 Wraps our stories with a decorator
+        componentWrapperDecorator((story) => `<div style="margin: 3em">${story}</div>`),
     ],
     render: (args: ButtonComponent) => ({
-      props: {
-        ...args,
-      },
-      template: `<button-component ${argsToTemplate(args)}>Button</button-component>`,
+        props: {
+            ...args,
+        },
+        template: `<button-component ${argsToTemplate(args)}>Button</button-component>`,
     }),
-  };
-  export default meta;
+};
+export default meta;
 
 export const PrimaryButton: StoryObj<ButtonComponent> = {
     args: {
-        style: ButtonStyle.PRIMARY
-    }
+        style: ButtonStyle.PRIMARY,
+    },
 };
 
 export const SecondaryButton: StoryObj<ButtonComponent> = {
     args: {
-        style: ButtonStyle.SECONDARY
-    }
+        style: ButtonStyle.SECONDARY,
+    },
 };
 export const OutlinedButton: StoryObj<ButtonComponent> = {
     args: {
-        style: ButtonStyle.OUTLINED
-    }
+        style: ButtonStyle.OUTLINED,
+    },
 };
 
 export const TextButton: StoryObj<ButtonComponent> = {
     args: {
-        style: ButtonStyle.TEXT
-    }
+        style: ButtonStyle.TEXT,
+    },
 };

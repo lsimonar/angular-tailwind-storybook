@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Component
-import { ComponentModule } from '@components/components.module';
+import { ComponentModule } from 'src/lib/components.module';
 
 // Pages
 import { PagesModule } from '@pages/pages.module';

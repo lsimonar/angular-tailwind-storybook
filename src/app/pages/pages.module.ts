@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 // Components
-import { ComponentModule } from '@components/components.module';
+import { ComponentModule } from 'src/lib/components.module';
 
 // Pages
 import { MainComponent } from '@pages/main/main.component';
