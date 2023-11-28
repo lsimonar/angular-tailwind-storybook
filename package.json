@@ -1,6 +1,11 @@
 {
   "name": "angular-tailwind-storybook",
-  "version": "0.0.0",
+  "version": "0.3.10",
+  "exports": {
+    "./src": {
+      "syle": "./src/styles.css"
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

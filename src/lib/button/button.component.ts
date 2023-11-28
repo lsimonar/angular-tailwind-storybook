@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Icons } from 'src/app/models/icons';
+import { Icons } from '../../app/models/icons';
 
 export enum ButtonStyle {
     PRIMARY = 'primary',
@@ -25,7 +25,7 @@ export enum ButtonDisplay {
     HUG = 'hug',
 }
 @Component({
-    selector: 'button-component',
+    selector: 'wb-button-component',
     templateUrl: './button.component.html',
     styleUrls: ['./button.component.scss'],
 })
